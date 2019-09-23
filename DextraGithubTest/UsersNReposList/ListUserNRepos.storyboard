@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aIN-gS-lmI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GitHub Users-->
+        <scene sceneID="eIf-6N-d3g">
+            <objects>
+                <viewController id="6Tg-Yc-9Ph" customClass="ListUsersViewController" customModule="DextraGithubTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Loy-Rc-Rig">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FIR-3b-NnW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Tg-Yc-9Ph" id="6eu-so-qZI"/>
+                                    <outlet property="delegate" destination="6Tg-Yc-9Ph" id="qD1-dR-bsF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FIR-3b-NnW" firstAttribute="top" secondItem="p3z-OY-3Hh" secondAttribute="top" id="FmK-Zn-85E"/>
+                            <constraint firstAttribute="bottom" secondItem="FIR-3b-NnW" secondAttribute="bottom" id="IJ0-03-e1G"/>
+                            <constraint firstItem="p3z-OY-3Hh" firstAttribute="trailing" secondItem="FIR-3b-NnW" secondAttribute="trailing" id="Oez-dN-sor"/>
+                            <constraint firstItem="FIR-3b-NnW" firstAttribute="leading" secondItem="p3z-OY-3Hh" secondAttribute="leading" id="lxN-Zg-saZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p3z-OY-3Hh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="GitHub Users" id="qh7-Dv-xxw"/>
+                    <connections>
+                        <outlet property="tableView" destination="FIR-3b-NnW" id="sbP-Gf-G0F"/>
+                        <segue destination="ZgF-HM-1wr" kind="show" identifier="repoSegueId" id="bbc-hO-YaL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSY-ia-3CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="112.5"/>
+        </scene>
+        <!--List Repos View Controller-->
+        <scene sceneID="ZcJ-nF-m5v">
+            <objects>
+                <viewController id="ZgF-HM-1wr" customClass="ListReposViewController" customModule="DextraGithubTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vz7-Wi-MJo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="msD-VH-hEU">
+                                <rect key="frame" x="8" y="268" width="398" height="628"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZgF-HM-1wr" id="yAm-29-Z0I"/>
+                                    <outlet property="delegate" destination="ZgF-HM-1wr" id="3Ma-w5-jNa"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BP1-O6-oUL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="G6x-Yq-zkK"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-AP-73B">
+                                <rect key="frame" x="157" y="98" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="33h-YM-gra"/>
+                                    <constraint firstAttribute="height" constant="100" id="QRm-iG-rlL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.88574266430000004" green="0.9020065665" blue="0.90611654519999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2p5-tg-Nhs">
+                                <rect key="frame" x="118.5" y="225" width="177" height="23"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1231231231" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXU-nP-IZl">
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                                        <color key="textColor" red="0.2784313725" green="0.18823529410000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHV-b2-2ii">
+                                        <rect key="frame" x="118.5" y="0.0" width="58.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                                        <color key="textColor" red="0.2784313725" green="0.18823529410000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9137254901960784" green="0.93333333333333335" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yjz-AP-73B" firstAttribute="centerX" secondItem="ud5-ZZ-GAs" secondAttribute="centerX" id="0xX-gB-Dtv"/>
+                            <constraint firstItem="ud5-ZZ-GAs" firstAttribute="trailing" secondItem="BP1-O6-oUL" secondAttribute="trailing" id="6j4-sL-oaw"/>
+                            <constraint firstItem="BP1-O6-oUL" firstAttribute="top" secondItem="ud5-ZZ-GAs" secondAttribute="top" id="8IQ-ee-eST"/>
+                            <constraint firstItem="2p5-tg-Nhs" firstAttribute="centerX" secondItem="yjz-AP-73B" secondAttribute="centerX" id="RE8-Oa-Qvb"/>
+                            <constraint firstItem="BP1-O6-oUL" firstAttribute="leading" secondItem="ud5-ZZ-GAs" secondAttribute="leading" id="bXe-bD-csJ"/>
+                            <constraint firstItem="yjz-AP-73B" firstAttribute="top" secondItem="ud5-ZZ-GAs" secondAttribute="top" constant="10" id="dLP-dg-nA1"/>
+                            <constraint firstItem="ud5-ZZ-GAs" firstAttribute="trailing" secondItem="msD-VH-hEU" secondAttribute="trailing" constant="8" id="foX-NN-hA6"/>
+                            <constraint firstItem="2p5-tg-Nhs" firstAttribute="bottom" secondItem="BP1-O6-oUL" secondAttribute="bottom" constant="-20" id="m7d-JH-NKN"/>
+                            <constraint firstAttribute="bottom" secondItem="msD-VH-hEU" secondAttribute="bottom" id="t8Y-ks-kih"/>
+                            <constraint firstItem="msD-VH-hEU" firstAttribute="top" secondItem="BP1-O6-oUL" secondAttribute="bottom" id="wdb-YX-Cj6"/>
+                            <constraint firstItem="msD-VH-hEU" firstAttribute="leading" secondItem="ud5-ZZ-GAs" secondAttribute="leading" constant="8" id="yWc-Kp-BPa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ud5-ZZ-GAs"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="BP1-O6-oUL" id="6EK-uT-r1a"/>
+                        <outlet property="repoWordLabel" destination="hHV-b2-2ii" id="2R6-Je-e8X"/>
+                        <outlet property="reposNumLabel" destination="bXU-nP-IZl" id="Abx-KS-WJc"/>
+                        <outlet property="tableView" destination="msD-VH-hEU" id="W5u-SB-e8l"/>
+                        <outlet property="userImage" destination="yjz-AP-73B" id="tPe-c7-xkP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jJ-6l-XBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.7101449275365" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dtF-rU-1Bu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aIN-gS-lmI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eZA-gp-lGe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Tg-Yc-9Ph" kind="relationship" relationship="rootViewController" id="vON-yM-gAG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4YC-z3-W7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
